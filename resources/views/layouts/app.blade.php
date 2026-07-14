@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
 @stack('styles')
 </head>
-<body>
+<body x-data>
 
 <!-- TOPBAR MARQUEE -->
 <div class="gz-topbar">
