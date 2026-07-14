@@ -7,11 +7,11 @@ class HomeController extends Controller
     public function index()
     {
         $categories = [
-            ['label' => 'Remeras', 'icon' => 'ti-shirt-sport'],
-            ['label' => 'Shorts', 'icon' => 'ti-swimming'],
-            ['label' => 'Gorras', 'icon' => 'ti-chef-hat'],
-            ['label' => 'Casual', 'icon' => 'ti-jacket'],
-            ['label' => 'Accesorios', 'icon' => 'ti-backpack'],
+            ['label' => 'Remeras', 'icon' => 'tshirt'],
+            ['label' => 'Shorts', 'icon' => 'shorts'],
+            ['label' => 'Gorras', 'icon' => 'cap'],
+            ['label' => 'Casual', 'icon' => 'shirt'],
+            ['label' => 'Accesorios', 'icon' => 'socks'],
         ];
 
         $novedades = [
