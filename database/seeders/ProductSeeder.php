@@ -134,6 +134,8 @@ class ProductSeeder extends Seeder
     {
         $product = Product::create($attributes + [
             'slug' => Str::slug($attributes['name']),
+            'gender' => 'Unisex',
+            'sport' => 'Pádel',
         ]);
 
         foreach ($colors as $color) {

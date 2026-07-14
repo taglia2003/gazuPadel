@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
-    'name', 'slug', 'category', 'description', 'price', 'old_price',
+    'name', 'slug', 'category', 'gender', 'sport', 'description', 'price', 'old_price',
     'image', 'tag', 'is_new', 'is_bestseller', 'active',
 ])]
 class Product extends Model
@@ -46,5 +46,10 @@ class Product extends Model
     public function getFormattedPriceAttribute(): string
     {
         return '$' . number_format($this->price, 0, ',', '.');
+    }
+
+    public function getFormattedOldPriceAttribute(): ?string
+    {
+        return $this->old_price ? '$' . number_format($this->old_price, 0, ',', '.') : null;
     }
 }

@@ -60,13 +60,13 @@
 <!-- NAV -->
 <nav class="gz-nav">
   <div class="gz-wrap gz-nav-inner">
-    <button class="gz-nav-link">Paletas</button>
-    <button class="gz-nav-link">Indumentaria</button>
-    <button class="gz-nav-link">Gorras</button>
-    <button class="gz-nav-link">Accesorios</button>
-    <button class="gz-nav-link">Bolsos</button>
-    <button class="gz-nav-link">Hombre</button>
-    <button class="gz-nav-link">Mujer</button>
+    <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Paletas']) }}">Paletas</a>
+    <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Indumentaria']) }}">Indumentaria</a>
+    <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Gorras']) }}">Gorras</a>
+    <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Accesorios']) }}">Accesorios</a>
+    <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Bolsos']) }}">Bolsos</a>
+    <a class="gz-nav-link" href="{{ route('products.index', ['gender' => 'Hombre']) }}">Hombre</a>
+    <a class="gz-nav-link" href="{{ route('products.index', ['gender' => 'Mujer']) }}">Mujer</a>
   </div>
 </nav>
 
@@ -199,6 +199,7 @@
 
 <script>window.__cartCount = @json($cartCount ?? 0);</script>
 <script src="{{ asset('js/cart.js') }}"></script>
+<script src="{{ asset('js/catalog.js') }}"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>

@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Rutas estaticas de /productos/* van antes que cualquier {product:slug} para
+// que no puedan ser interpretadas como un slug (ej. "buscar").
+Route::get('/productos', [ProductController::class, 'index'])->name('products.index');
+Route::get('/productos/buscar', [ProductController::class, 'search'])->name('products.search');
 Route::get('/productos/{product:slug}/quick-view', [ProductController::class, 'quickView'])
     ->name('products.quick-view');
 

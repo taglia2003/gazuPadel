@@ -50,7 +50,7 @@ button{font-family:inherit;cursor:pointer;}
 .gz-nav{background:var(--ink-2);border-bottom:1px solid #222;}
 .gz-nav-inner{display:flex;overflow-x:auto;scrollbar-width:none;}
 .gz-nav-inner::-webkit-scrollbar{display:none;}
-.gz-nav-link{background:none;border:none;color:#ddd;font-size:12px;font-weight:600;letter-spacing:.03em;padding:12px 16px;white-space:nowrap;text-transform:uppercase;transition:color .15s;}
+.gz-nav-link{background:none;border:none;color:#ddd;font-size:12px;font-weight:600;letter-spacing:.03em;padding:12px 16px;white-space:nowrap;text-transform:uppercase;transition:color .15s;text-decoration:none;display:inline-block;}
 .gz-nav-link:hover{color:var(--gold);}
 
 /* ---------- Hero ---------- */
