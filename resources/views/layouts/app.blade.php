@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <title>@yield('title', 'GAZÚ Padel Club · Tienda Oficial · Santa Fe')</title>
 <meta name="description" content="@yield('description', 'Tienda oficial GAZÚ Padel Club. Indumentaria, gorras y accesorios. Complejo de pádel en Dr. Zavalla 1761, Santa Fe.')">
 <link rel="icon" href="{{ asset('images/brand/escudo.png') }}">
@@ -11,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <link rel="stylesheet" href="{{ asset('css/gazu.css') }}">
+<link rel="stylesheet" href="{{ asset('css/cart.css') }}">
 @stack('styles')
 </head>
 <body>
@@ -46,9 +48,9 @@
     </div>
     <div class="gz-header-right">
       <i class="ti ti-search gz-search-mobile"></i>
-      <a class="gz-cart" aria-label="Carrito">
+      <a class="gz-cart" aria-label="Carrito" href="{{ route('cart.index') }}">
         <i class="ti ti-shopping-cart"></i>
-        <span class="gz-cart-badge">0</span>
+        <span class="gz-cart-badge" x-text="$store.cart.count"></span>
       </a>
       <img class="gz-zorro" src="{{ asset('images/brand/zorro.jpg') }}" alt="Zorro GAZÚ">
     </div>
@@ -117,6 +119,87 @@
     </div>
   </div>
 </footer>
+
+<!-- QUICK VIEW MODAL -->
+<div class="gz-modal" x-show="$store.cart.modalOpen" x-cloak style="display:none;">
+  <div class="gz-modal-backdrop" @click="$store.cart.closeModal()"></div>
+  <div class="gz-modal-panel" @click.outside="$store.cart.closeModal()">
+    <button type="button" class="gz-modal-close" @click="$store.cart.closeModal()" aria-label="Cerrar">
+      <i class="ti ti-x"></i>
+    </button>
+
+    <template x-if="$store.cart.loading && !$store.cart.product">
+      <div class="gz-quickview-loading">Cargando…</div>
+    </template>
+
+    <template x-if="$store.cart.product">
+      <div class="gz-quickview">
+        <div class="gz-quickview-media">
+          <img :src="$store.cart.currentImage" :alt="$store.cart.product.name">
+        </div>
+        <div class="gz-quickview-info">
+          <h3 x-text="$store.cart.product.name"></h3>
+          <p class="gz-quickview-desc" x-text="$store.cart.product.description"></p>
+          <div class="gz-quickview-price" x-text="$store.cart.product.formatted_price"></div>
+
+          <div class="gz-quickview-field">
+            <label>Color</label>
+            <div class="gz-swatches">
+              <template x-for="c in $store.cart.colors" :key="c.color">
+                <button type="button"
+                        class="gz-swatch"
+                        :class="{ 'is-selected': $store.cart.selectedColor === c.color }"
+                        :style="c.color_hex ? ('background:' + c.color_hex) : ''"
+                        :title="c.color"
+                        @click="$store.cart.selectColor(c.color)"></button>
+              </template>
+            </div>
+          </div>
+
+          <div class="gz-quickview-field">
+            <label>Talle</label>
+            <div class="gz-sizes">
+              <template x-for="v in $store.cart.sizesForColor($store.cart.selectedColor)" :key="v.id">
+                <button type="button"
+                        class="gz-size-btn"
+                        :class="{ 'is-selected': $store.cart.selectedSize === v.size }"
+                        :disabled="v.stock < 1"
+                        @click="$store.cart.selectSize(v.size)"
+                        x-text="v.size"></button>
+              </template>
+            </div>
+          </div>
+
+          <div class="gz-quickview-field">
+            <label>Cantidad</label>
+            <div class="gz-qty">
+              <button type="button" @click="$store.cart.qty = Math.max(1, $store.cart.qty - 1)">−</button>
+              <span x-text="$store.cart.qty"></span>
+              <button type="button" @click="$store.cart.qty = Math.min($store.cart.selectedVariant?.stock ?? 20, $store.cart.qty + 1)">+</button>
+            </div>
+          </div>
+
+          <p class="gz-quickview-error" x-show="$store.cart.error" x-text="$store.cart.error"></p>
+
+          <button type="button"
+                  class="gz-btn gz-btn--blue gz-quickview-add"
+                  :disabled="!$store.cart.selectedVariant || $store.cart.selectedVariant.stock < 1 || $store.cart.loading"
+                  @click="$store.cart.addToCart()">
+            <span x-show="!$store.cart.selectedSize">Elegí un talle</span>
+            <span x-show="$store.cart.selectedSize && $store.cart.selectedVariant && $store.cart.selectedVariant.stock > 0">Agregar al carrito</span>
+            <span x-show="$store.cart.selectedSize && $store.cart.selectedVariant && $store.cart.selectedVariant.stock < 1">Sin stock</span>
+          </button>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+
+<div class="gz-toast" x-show="$store.cart.toastMessage" x-cloak x-text="$store.cart.toastMessage" x-transition></div>
+
+<script>window.__cartCount = @json($cartCount ?? 0);</script>
+<script src="{{ asset('js/cart.js') }}"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>
 </html>

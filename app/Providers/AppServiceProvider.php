@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Cart;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('layouts.app', function ($view) {
+            $view->with('cartCount', request()->attributes->has('cart_token')
+                ? Cart::current()->items()->sum('quantity')
+                : 0);
+        });
     }
 }
