@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-<section class="gz-catalog" x-data="catalogFilters(@json($initialFilters))">
+<section class="gz-catalog" x-data="catalogFilters({{ \Illuminate\Support\Js::from($initialFilters) }})">
 
   <div class="gz-wrap gz-catalog-inner">
 
