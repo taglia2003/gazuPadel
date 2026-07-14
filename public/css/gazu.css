@@ -72,9 +72,9 @@ button{font-family:inherit;cursor:pointer;}
 .gz-cats{background:#fff;border-bottom:1px solid var(--line);padding:26px 0;}
 .gz-cats-row{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
 .gz-cat{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:78px;text-align:center;}
-.gz-cat-circle{width:64px;height:64px;border-radius:50%;background:#f0f4ff;border:1.5px solid #dde6f7;display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--blue);transition:transform .2s,border-color .2s;}
+.gz-cat-circle{width:64px;height:64px;border-radius:50%;background:#f0f4ff;border:1.5px solid #dde6f7;display:flex;align-items:center;justify-content:center;color:var(--blue);transition:transform .2s,border-color .2s;}
+.gz-cat-circle i{font-size:24px;line-height:1;}
 .gz-cat:hover .gz-cat-circle{transform:translateY(-3px);border-color:var(--blue);}
-.gz-cat-svg{width:26px;height:26px;}
 .gz-cat span{font-size:12px;font-weight:600;color:#333;}
 
 /* ---------- Section heads ---------- */
