@@ -8,9 +8,9 @@ class HomeController extends Controller
     {
         $categories = [
             ['label' => 'Remeras', 'icon' => 'ti-shirt-sport'],
-            ['label' => 'Shorts', 'icon' => 'ti-boxer'],
-            ['label' => 'Gorras', 'icon' => 'ti-sun'],
-            ['label' => 'Casual', 'icon' => 'ti-clothes-rack'],
+            ['label' => 'Shorts', 'icon' => 'shorts'],
+            ['label' => 'Gorras', 'icon' => 'cap'],
+            ['label' => 'Casual', 'icon' => 'ti-jacket'],
             ['label' => 'Accesorios', 'icon' => 'ti-backpack'],
         ];
 
