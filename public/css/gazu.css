@@ -8,8 +8,8 @@
   --text:#1a1a1a;
   --muted:#666666;
   --muted-2:#777777;
-  --font-disp:'Oswald', sans-serif;
-  --font-sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-disp:'Space Grotesk', sans-serif;
+  --font-sans:'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --wrap: 1280px;
 }
 *{box-sizing:border-box;}
