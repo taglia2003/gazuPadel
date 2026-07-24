@@ -31,6 +31,7 @@ class ProductController extends Controller
         ];
 
         $initialFilters = [
+            'q' => $request->input('q', ''),
             'category' => (array) $request->input('category', []),
             'gender' => (array) $request->input('gender', []),
             'sport' => (array) $request->input('sport', []),
@@ -98,6 +99,7 @@ class ProductController extends Controller
     private function applyFilters(Builder $query, Request $request): Builder
     {
         return $query
+            ->when($request->filled('q'), fn (Builder $q) => $q->where('name', 'like', '%' . $request->input('q') . '%'))
             ->when($request->filled('category'), fn (Builder $q) => $q->whereIn('category', (array) $request->input('category')))
             ->when($request->filled('gender'), fn (Builder $q) => $q->whereIn('gender', (array) $request->input('gender')))
             ->when($request->filled('sport'), fn (Builder $q) => $q->whereIn('sport', (array) $request->input('sport')))

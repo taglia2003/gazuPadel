@@ -37,17 +37,17 @@
 
 <!-- HEADER -->
 <header class="gz-header">
-  <div class="gz-wrap gz-header-inner">
+  <div class="gz-wrap gz-header-inner" x-data="{ mobileSearchOpen: false }">
     <a class="gz-logo" href="{{ route('home') }}">
       <img src="{{ asset('images/brand/escudo.png') }}" alt="Escudo GAZÚ">
       <span class="gz-logo-word">GAZÚ</span>
     </a>
-    <div class="gz-search">
+    <form class="gz-search" :class="{ 'is-open': mobileSearchOpen }" method="GET" action="{{ route('products.index') }}">
       <i class="ti ti-search"></i>
-      <input type="text" placeholder="Buscar remeras, gorras...">
-    </div>
+      <input type="text" name="q" value="{{ request('q') }}" placeholder="Buscar remeras, gorras...">
+    </form>
     <div class="gz-header-right">
-      <i class="ti ti-search gz-search-mobile"></i>
+      <i class="ti ti-search gz-search-mobile" @click="mobileSearchOpen = !mobileSearchOpen"></i>
       <a class="gz-cart" aria-label="Carrito" href="{{ route('cart.index') }}">
         <i class="ti ti-shopping-cart"></i>
         <span class="gz-cart-badge" x-text="$store.cart.count"></span>

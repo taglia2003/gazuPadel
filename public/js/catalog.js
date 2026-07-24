@@ -1,6 +1,7 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('catalogFilters', (initialFilters) => ({
         filters: {
+            q: initialFilters.q || '',
             category: initialFilters.category || [],
             gender: initialFilters.gender || [],
             sport: initialFilters.sport || [],
@@ -40,7 +41,7 @@ document.addEventListener('alpine:init', () => {
 
         clearAll() {
             this.filters = {
-                category: [], gender: [], sport: [], color: [], size: [],
+                q: '', category: [], gender: [], sport: [], color: [], size: [],
                 price_min: '', price_max: '', is_new: false, bestseller: false,
             };
             this.apply();
@@ -48,6 +49,7 @@ document.addEventListener('alpine:init', () => {
 
         buildQueryString() {
             const params = new URLSearchParams();
+            if (this.filters.q) params.set('q', this.filters.q);
             ['category', 'gender', 'sport', 'color', 'size'].forEach((key) => {
                 this.filters[key].forEach((value) => params.append(key + '[]', value));
             });
