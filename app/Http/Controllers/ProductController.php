@@ -38,6 +38,8 @@ class ProductController extends Controller
             'size' => (array) $request->input('size', []),
             'price_min' => $request->input('price_min', ''),
             'price_max' => $request->input('price_max', ''),
+            'is_new' => $request->boolean('is_new'),
+            'bestseller' => $request->boolean('bestseller'),
         ];
 
         return view('products.index', compact('products', 'filterOptions', 'initialFilters'));
@@ -108,6 +110,8 @@ class ProductController extends Controller
                 fn (Builder $v) => $v->whereIn('size', (array) $request->input('size'))
             ))
             ->when($request->filled('price_min'), fn (Builder $q) => $q->where('price', '>=', (int) $request->input('price_min')))
-            ->when($request->filled('price_max'), fn (Builder $q) => $q->where('price', '<=', (int) $request->input('price_max')));
+            ->when($request->filled('price_max'), fn (Builder $q) => $q->where('price', '<=', (int) $request->input('price_max')))
+            ->when($request->boolean('is_new'), fn (Builder $q) => $q->where('is_new', true))
+            ->when($request->boolean('bestseller'), fn (Builder $q) => $q->where('is_bestseller', true));
     }
 }

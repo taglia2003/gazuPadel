@@ -21,7 +21,7 @@
 <section class="gz-cats">
   <div class="gz-wrap gz-cats-row">
     @foreach($categories as $cat)
-      <x-category-icon :icon="$cat['icon']" :label="$cat['label']" />
+      <x-category-icon :icon="$cat['icon']" :label="$cat['label']" :href="$cat['href']" />
     @endforeach
   </div>
 </section>
@@ -31,7 +31,7 @@
   <div class="gz-wrap">
     <div class="gz-sec-head">
       <h2><i class="ti ti-star-filled"></i>Novedades</h2>
-      <a class="gz-see" href="#">Ver todos &rarr;</a>
+      <a class="gz-see" href="{{ route('products.index', ['is_new' => 1]) }}">Ver todos &rarr;</a>
     </div>
     <div class="gz-grid">
       @foreach($novedades as $product)
@@ -46,7 +46,7 @@
   <div class="gz-wrap">
     <div class="gz-sec-head">
       <h2>Indumentaria más vendida</h2>
-      <a class="gz-see" href="#">Ver todos ({{ count($masVendidas) }}) &rarr;</a>
+      <a class="gz-see" href="{{ route('products.index', ['category' => 'Indumentaria', 'bestseller' => 1]) }}">Ver todos ({{ count($masVendidas) }}) &rarr;</a>
     </div>
     <div class="gz-grid">
       @foreach($masVendidas as $product)
@@ -77,7 +77,7 @@
   <div class="gz-wrap">
     <div class="gz-sec-head">
       <h2>Gorras GAZÚ</h2>
-      <a class="gz-see" href="#">Ver todas &rarr;</a>
+      <a class="gz-see" href="{{ route('products.index', ['category' => 'Gorras']) }}">Ver todas &rarr;</a>
     </div>
     <div class="gz-grid">
       @foreach($gorras as $product)
@@ -126,6 +126,10 @@
         <div class="gz-visit-row"><span class="gz-visit-rt">Horarios</span><span class="gz-visit-rv"><i class="ti ti-clock"></i>Lun a Sáb · 9:00 – 24:00</span></div>
         <div class="gz-visit-row"><span class="gz-visit-rt">Contacto</span><span class="gz-visit-rv"><i class="ti ti-mail"></i>gazu.padel@gmail.com</span></div>
         <div class="gz-visit-row"><span class="gz-visit-rt">WhatsApp</span><span class="gz-visit-rv"><i class="ti ti-brand-whatsapp"></i>+3424876555</span></div>
+      </div>
+      <div class="gz-visit-minimap">
+        <iframe src="https://maps.google.com/maps?q=Dr.+Zavalla+1761,+Santa+Fe,+Argentina&z=16&output=embed"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación GAZÚ Padel Club"></iframe>
       </div>
       <a class="gz-btn gz-btn--blue" href="https://wa.me/5493424876555" target="_blank" rel="noopener">Escribinos por WhatsApp <i class="ti ti-arrow-up-right"></i></a>
     </div>

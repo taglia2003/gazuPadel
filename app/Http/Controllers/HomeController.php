@@ -9,11 +9,11 @@ class HomeController extends Controller
     public function index()
     {
         $categories = [
-            ['label' => 'Remeras', 'icon' => 'tshirt'],
-            ['label' => 'Shorts', 'icon' => 'shorts'],
-            ['label' => 'Gorras', 'icon' => 'cap'],
-            ['label' => 'Casual', 'icon' => 'shirt'],
-            ['label' => 'Accesorios', 'icon' => 'socks'],
+            ['label' => 'Remeras', 'icon' => 'tshirt', 'href' => route('products.index', ['category' => 'Indumentaria'])],
+            ['label' => 'Shorts', 'icon' => 'shorts', 'href' => route('products.index', ['category' => 'Indumentaria'])],
+            ['label' => 'Gorras', 'icon' => 'cap', 'href' => route('products.index', ['category' => 'Gorras'])],
+            ['label' => 'Casual', 'icon' => 'shirt', 'href' => route('products.index', ['category' => 'Indumentaria'])],
+            ['label' => 'Accesorios', 'icon' => 'socks', 'href' => route('products.index', ['category' => 'Accesorios'])],
         ];
 
         $novedades = Product::with('variants')

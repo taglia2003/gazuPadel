@@ -8,6 +8,8 @@ document.addEventListener('alpine:init', () => {
             size: initialFilters.size || [],
             price_min: initialFilters.price_min || '',
             price_max: initialFilters.price_max || '',
+            is_new: initialFilters.is_new || false,
+            bestseller: initialFilters.bestseller || false,
         },
         products: [],
         hasFiltered: false,
@@ -39,7 +41,7 @@ document.addEventListener('alpine:init', () => {
         clearAll() {
             this.filters = {
                 category: [], gender: [], sport: [], color: [], size: [],
-                price_min: '', price_max: '',
+                price_min: '', price_max: '', is_new: false, bestseller: false,
             };
             this.apply();
         },
@@ -51,6 +53,8 @@ document.addEventListener('alpine:init', () => {
             });
             if (this.filters.price_min) params.set('price_min', this.filters.price_min);
             if (this.filters.price_max) params.set('price_max', this.filters.price_max);
+            if (this.filters.is_new) params.set('is_new', '1');
+            if (this.filters.bestseller) params.set('bestseller', '1');
             return params.toString();
         },
 
