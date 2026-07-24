@@ -206,6 +206,153 @@ class ProductSeeder extends Seeder
             ['color' => 'Negro', 'color_hex' => '#111111', 'image' => 'gorra-logo-zorro-negra.png'],
             ['color' => 'Blanco', 'color_hex' => '#ffffff', 'image' => 'gorra-logo-zorro-blanca.png'],
         ], ['Único']);
+
+        // Paletas, bolsos y pelotas de terceros: precios de referencia relevados
+        // en tiendas de padel argentinas (julio 2026), ajustar cuando haya costo real.
+        $this->createProduct([
+            'name' => 'Paleta NOX AR',
+            'category' => 'Paletas',
+            'description' => 'Paleta NOX AR, forma diamante, alto rendimiento para jugadores avanzados.',
+            'price' => 520000,
+            'image' => 'paleta-nox-ar.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'paleta-nox-ar.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Paleta NOX ML10',
+            'category' => 'Paletas',
+            'description' => 'Paleta NOX ML10, forma diamante, control y potencia para juego de ataque.',
+            'price' => 580000,
+            'image' => 'paleta-nox-ml10.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'paleta-nox-ml10.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Paleta Babolat Viper',
+            'category' => 'Paletas',
+            'description' => 'Paleta Babolat Viper, forma híbrida, equilibrio entre potencia y control.',
+            'price' => 480000,
+            'image' => 'paleta-babolat-viper.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'paleta-babolat-viper.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Paleta Head Speed Pro',
+            'category' => 'Paletas',
+            'description' => 'Paleta Head Speed Pro, forma diamante, potencia para jugadores de ataque.',
+            'price' => 520000,
+            'image' => 'paleta-head-speed-pro.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'paleta-head-speed-pro.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Paleta Adidas Metalbone',
+            'category' => 'Paletas',
+            'description' => 'Paleta Adidas Metalbone, forma diamante, máxima potencia.',
+            'price' => 650000,
+            'image' => 'paleta-adidas-metalbone.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'paleta-adidas-metalbone.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Paleta Adidas Metalbone CTRL',
+            'category' => 'Paletas',
+            'description' => 'Paleta Adidas Metalbone CTRL, forma redonda, control y comodidad de juego.',
+            'price' => 600000,
+            'image' => 'paleta-adidas-metalbone-ctrl.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'paleta-adidas-metalbone-ctrl.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Bolso Babolat',
+            'category' => 'Bolsos',
+            'description' => 'Bolso paletero Babolat, compartimento térmico, capacidad para 2 paletas.',
+            'price' => 180000,
+            'image' => 'bolso-babolat-negro.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Negro', 'color_hex' => '#111111', 'image' => 'bolso-babolat-negro.png'],
+            ['color' => 'Verde', 'color_hex' => '#166534', 'image' => 'bolso-babolat-verde.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Bolso NOX',
+            'category' => 'Bolsos',
+            'description' => 'Bolso paletero NOX, compartimento térmico, bolsillo lateral para accesorios.',
+            'price' => 220000,
+            'image' => 'bolso-nox-negro.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Negro', 'color_hex' => '#111111', 'image' => 'bolso-nox-negro.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Bolso Bull Padel',
+            'category' => 'Bolsos',
+            'description' => 'Bolso paletero Bull Padel, compartimento térmico, correa ajustable.',
+            'price' => 250000,
+            'image' => 'bolso-bullpadel-turquesa.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Turquesa', 'color_hex' => '#14b8a6', 'image' => 'bolso-bullpadel-turquesa.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Pelotas Meta',
+            'category' => 'Accesorios',
+            'description' => 'Tubo x3 pelotas de pádel Meta.',
+            'price' => 9900,
+            'image' => 'pelotitas_meta.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'pelotitas_meta.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Pelotas ODPRO',
+            'category' => 'Accesorios',
+            'description' => 'Tubo x3 pelotas de pádel ODPRO.',
+            'price' => 14500,
+            'image' => 'pelotitas_odpro.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'pelotitas_odpro.png'],
+        ], ['Único']);
+
+        $this->createProduct([
+            'name' => 'Pelotas XTRUST',
+            'category' => 'Accesorios',
+            'description' => 'Tubo x3 pelotas de pádel XTRUST.',
+            'price' => 13900,
+            'image' => 'pelotitas_xtrust.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Único', 'image' => 'pelotitas_xtrust.png'],
+        ], ['Único']);
     }
 
     private function createProduct(array $attributes, array $colors, array $sizes): void
