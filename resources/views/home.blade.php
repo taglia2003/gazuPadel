@@ -127,11 +127,13 @@
         <div class="gz-visit-row"><span class="gz-visit-rt">Contacto</span><span class="gz-visit-rv"><i class="ti ti-mail"></i>gazu.padel@gmail.com</span></div>
         <div class="gz-visit-row"><span class="gz-visit-rt">WhatsApp</span><span class="gz-visit-rv"><i class="ti ti-brand-whatsapp"></i>+3424876555</span></div>
       </div>
-      <div class="gz-visit-minimap">
-        <iframe src="https://maps.google.com/maps?q=Dr.+Zavalla+1761,+Santa+Fe,+Argentina&z=16&output=embed"
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación GAZÚ Padel Club"></iframe>
-      </div>
       <a class="gz-btn gz-btn--blue" href="https://wa.me/5493424876555" target="_blank" rel="noopener">Escribinos por WhatsApp <i class="ti ti-arrow-up-right"></i></a>
+    </div>
+  </div>
+  <div class="gz-wrap">
+    <div class="gz-visit-minimap">
+      <iframe src="https://maps.google.com/maps?q=Dr.+Zavalla+1761,+Santa+Fe,+Argentina&z=16&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" title="Ubicación GAZÚ Padel Club"></iframe>
     </div>
   </div>
 </section>
