@@ -98,6 +98,58 @@ class ProductSeeder extends Seeder
         ], $apparelSizes);
 
         $this->createProduct([
+            'name' => 'Buzo Clásico',
+            'category' => 'Indumentaria',
+            'description' => 'Buzo GAZÚ friza premium, cuello redondo, escudo bordado y estampado GAZÚ al frente.',
+            'price' => 37900,
+            'image' => 'buzo-gazu.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Azul Marino', 'color_hex' => '#1e3a8a', 'image' => 'buzo-gazu.png'],
+            ['color' => 'Blanco', 'color_hex' => '#ffffff', 'image' => 'buzo-gazu-blanco.png'],
+        ], $apparelSizes);
+
+        $this->createProduct([
+            'name' => 'Canguro Clásico',
+            'category' => 'Indumentaria',
+            'description' => 'Canguro GAZÚ friza premium con capucha y bolsillo canguro, estampado GAZÚ al frente.',
+            'price' => 42900,
+            'image' => 'canguro-gazu.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Negro', 'color_hex' => '#111111'],
+        ], $apparelSizes);
+
+        $this->createProduct([
+            'name' => 'Chomba Clásica',
+            'category' => 'Indumentaria',
+            'description' => 'Chomba GAZÚ piqué técnico, logo zorro bordado al pecho, ideal para cancha o calle.',
+            'price' => 29900,
+            'image' => 'chomba-gazu-azul.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Azul', 'color_hex' => '#1e3a8a', 'image' => 'chomba-gazu-azul.png'],
+            ['color' => 'Blanco', 'color_hex' => '#ffffff', 'image' => 'chomba-gazu-blanca.png'],
+        ], $apparelSizes);
+
+        $this->createProduct([
+            'name' => 'Remera Cancha',
+            'category' => 'Indumentaria',
+            'description' => 'Remera GAZÚ Padel, algodón peinado, estampado de cancha de pádel en la espalda.',
+            'price' => 24900,
+            'image' => 'remera-cancha.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Negro', 'color_hex' => '#111111', 'image' => 'remera-cancha.png'],
+            ['color' => 'Azul', 'color_hex' => '#1e3a8a', 'image' => 'remera-cancha-azul.png'],
+            ['color' => 'Blanco', 'color_hex' => '#ffffff', 'image' => 'remera-cancha-blanca.png'],
+        ], $apparelSizes);
+
+        $this->createProduct([
             'name' => 'Gorra Escudo Negra',
             'category' => 'Gorras',
             'description' => 'Gorra GAZÚ con escudo bordado, cierre trasero ajustable.',
@@ -120,13 +172,26 @@ class ProductSeeder extends Seeder
         ], ['Único']);
 
         $this->createProduct([
+            'name' => 'Gorra Escudo Azul',
+            'category' => 'Gorras',
+            'description' => 'Gorra GAZÚ con escudo bordado, cierre trasero ajustable.',
+            'price' => 15900,
+            'image' => 'gorra-escudo-azul.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Azul Marino', 'color_hex' => '#1e3a8a'],
+        ], ['Único']);
+
+        $this->createProduct([
             'name' => 'Gorra Logo Zorro',
             'category' => 'Gorras',
             'description' => 'Gorra GAZÚ con logo zorro bordado, cierre trasero ajustable.',
             'price' => 15900,
             'image' => 'gorra-logo-zorro-negra.png',
         ], [
-            ['color' => 'Negro', 'color_hex' => '#111111'],
+            ['color' => 'Negro', 'color_hex' => '#111111', 'image' => 'gorra-logo-zorro-negra.png'],
+            ['color' => 'Blanco', 'color_hex' => '#ffffff', 'image' => 'gorra-logo-zorro-blanca.png'],
         ], ['Único']);
     }
 
