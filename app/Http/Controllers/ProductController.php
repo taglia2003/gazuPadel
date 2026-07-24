@@ -86,6 +86,9 @@ class ProductController extends Controller
                 'size' => $variant->size,
                 'stock' => $variant->stock,
                 'image' => $variant->display_image ? asset('images/products/' . $variant->display_image) : null,
+                'gallery' => $variant->images
+                    ? collect($variant->images)->map(fn ($img) => asset('images/products/' . $img))->all()
+                    : ($variant->display_image ? [asset('images/products/' . $variant->display_image)] : []),
             ]),
         ]);
     }

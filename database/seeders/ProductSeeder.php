@@ -73,16 +73,16 @@ class ProductSeeder extends Seeder
             ['color' => 'Verde', 'color_hex' => '#4d7c0f', 'image' => 'remera-vertical-verde.png'],
         ], $apparelSizes);
 
-        // Sin foto real todavía (no existe archivo en public/images/products/).
         $this->createProduct([
             'name' => 'Short Clásico',
             'category' => 'Indumentaria',
-            'description' => 'Short GAZÚ clásico, friza premium, bolsillos laterales.',
+            'description' => 'Short GAZÚ técnico, bolsillos laterales, logo zorro estampado al costado.',
             'price' => 19500,
-            'image' => null,
+            'image' => 'short-frente-negro.png',
             'is_bestseller' => true,
         ], [
-            ['color' => 'Negro', 'color_hex' => '#111111'],
+            ['color' => 'Negro', 'color_hex' => '#111111', 'image' => 'short-frente-negro.png', 'images' => ['short-frente-negro.png', 'short-lateral-negro.png', 'short-trasera-negro.png']],
+            ['color' => 'Blanco', 'color_hex' => '#ffffff', 'image' => 'short-frente-blanco.png', 'images' => ['short-frente-blanco.png', 'short-lateral-blanco.png', 'short-trasera-blanco.png']],
         ], $apparelSizes);
 
         // Sin foto real todavía (no existe archivo en public/images/products/).
@@ -184,6 +184,19 @@ class ProductSeeder extends Seeder
         ], ['Único']);
 
         $this->createProduct([
+            'name' => 'Bolso GAZÚ',
+            'category' => 'Bolsos',
+            'description' => 'Bolso deportivo GAZÚ, bolsillo lateral en malla, manija acolchada y correa ajustable, logo zorro bordado.',
+            'price' => 27900,
+            'image' => 'bolso-negro.png',
+            'tag' => 'NUEVO',
+            'is_new' => true,
+        ], [
+            ['color' => 'Negro', 'color_hex' => '#111111', 'image' => 'bolso-negro.png'],
+            ['color' => 'Blanco', 'color_hex' => '#ffffff', 'image' => 'bolso-blanco.png'],
+        ], ['Único']);
+
+        $this->createProduct([
             'name' => 'Gorra Logo Zorro',
             'category' => 'Gorras',
             'description' => 'Gorra GAZÚ con logo zorro bordado, cierre trasero ajustable.',
@@ -211,6 +224,7 @@ class ProductSeeder extends Seeder
                     'size' => $size,
                     'stock' => random_int(6, 14),
                     'image' => $color['image'] ?? null,
+                    'images' => $color['images'] ?? null,
                 ]);
             }
         }

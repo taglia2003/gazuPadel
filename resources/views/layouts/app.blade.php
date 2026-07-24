@@ -136,6 +136,15 @@
       <div class="gz-quickview">
         <div class="gz-quickview-media">
           <img :src="$store.cart.currentImage" :alt="$store.cart.product.name">
+          <div class="gz-quickview-thumbs" x-show="$store.cart.gallery.length > 1">
+            <template x-for="(img, idx) in $store.cart.gallery" :key="idx">
+              <button type="button" class="gz-quickview-thumb"
+                      :class="{ 'is-selected': idx === $store.cart.galleryIndex }"
+                      @click="$store.cart.selectImage(idx)">
+                <img :src="img" alt="">
+              </button>
+            </template>
+          </div>
         </div>
         <div class="gz-quickview-info">
           <h3 x-text="$store.cart.product.name"></h3>

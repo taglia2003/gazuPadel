@@ -10,6 +10,7 @@ document.addEventListener('alpine:init', () => {
         colors: [],
         selectedColor: null,
         selectedSize: null,
+        galleryIndex: 0,
         qty: 1,
 
         csrfToken() {
@@ -24,6 +25,7 @@ document.addEventListener('alpine:init', () => {
             this.colors = [];
             this.selectedColor = null;
             this.selectedSize = null;
+            this.galleryIndex = 0;
             this.qty = 1;
 
             try {
@@ -55,6 +57,7 @@ document.addEventListener('alpine:init', () => {
         selectColor(color) {
             this.selectedColor = color;
             this.selectedSize = null;
+            this.galleryIndex = 0;
             this.qty = 1;
         },
 
@@ -63,15 +66,27 @@ document.addEventListener('alpine:init', () => {
             this.qty = 1;
         },
 
+        selectImage(index) {
+            this.galleryIndex = index;
+        },
+
         sizesForColor(color) {
             if (!this.product) return [];
             return this.product.variants.filter((v) => v.color === color);
         },
 
-        get currentImage() {
-            if (!this.product) return null;
+        get gallery() {
+            if (!this.product) return [];
+            const withGallery = this.product.variants.find((v) => v.color === this.selectedColor && v.gallery?.length);
+            if (withGallery) return withGallery.gallery;
             const withImage = this.product.variants.find((v) => v.color === this.selectedColor && v.image);
-            return withImage ? withImage.image : this.product.image;
+            if (withImage) return [withImage.image];
+            return this.product.image ? [this.product.image] : [];
+        },
+
+        get currentImage() {
+            const gallery = this.gallery;
+            return gallery[this.galleryIndex] ?? gallery[0] ?? this.product?.image ?? null;
         },
 
         get selectedVariant() {
