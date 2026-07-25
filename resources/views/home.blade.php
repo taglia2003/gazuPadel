@@ -60,8 +60,6 @@
 <section class="gz-adbanner">
   <div class="gz-wrap">
     <div class="gz-adbanner-inner">
-      <img src="{{ asset('images/sections/visit-bg.jpg') }}" alt="">
-      <div class="gz-adbanner-shade"></div>
       <div class="gz-ad-l">
         <p class="gz-ad-kicker">Espacio publicitario</p>
         <p class="gz-ad-title"><i class="ti ti-star-filled"></i>TU MARCA ACÁ</p>
@@ -117,6 +115,7 @@
   <div class="gz-wrap gz-visit-grid">
     <div class="gz-visit-media">
       <img src="{{ asset('images/sections/fachada.jpg') }}" alt="Fachada del complejo GAZÚ">
+      <img src="{{ asset('images/sections/visit-bg.jpg') }}" alt="Canchas del complejo GAZÚ">
       <span class="gz-visit-pin"><i class="ti ti-map-pin"></i>Dr. Zavalla 1761, Santa Fe</span>
     </div>
     <div class="gz-visit-copy">
@@ -130,12 +129,10 @@
         <div class="gz-visit-row"><span class="gz-visit-rt">WhatsApp</span><span class="gz-visit-rv"><i class="ti ti-brand-whatsapp"></i>+3424876555</span></div>
       </div>
       <a class="gz-btn gz-btn--blue" href="https://wa.me/5493424876555" target="_blank" rel="noopener">Escribinos por WhatsApp <i class="ti ti-arrow-up-right"></i></a>
-    </div>
-  </div>
-  <div class="gz-wrap">
-    <div class="gz-visit-minimap">
-      <iframe src="https://maps.google.com/maps?q=Dr.+Zavalla+1761,+Santa+Fe,+Argentina&z=16&output=embed"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" title="Ubicación GAZÚ Padel Club"></iframe>
+      <div class="gz-visit-minimap">
+        <iframe src="https://maps.google.com/maps?q=Dr.+Zavalla+1761,+Santa+Fe,+Argentina&z=16&output=embed"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" title="Ubicación GAZÚ Padel Club"></iframe>
+      </div>
     </div>
   </div>
 </section>
