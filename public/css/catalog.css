@@ -5,7 +5,7 @@
 .gz-btn--outline:hover{background:#f0f4ff;}
 
 /* ---------- Filters toggle (mobile) ---------- */
-.gz-filters-toggle{display:none;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:6px;padding:10px 16px;background:#fff;font-weight:700;font-size:13px;margin-bottom:16px;}
+.gz-filters-toggle{display:none;flex:none;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:6px;padding:8px 14px;background:#fff;font-weight:700;font-size:13px;white-space:nowrap;}
 .gz-filters-backdrop{display:none;}
 
 /* ---------- Sidebar ---------- */
@@ -25,7 +25,8 @@
 
 /* ---------- Results ---------- */
 .gz-catalog-results{flex:1;min-width:0;}
-.gz-catalog-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+.gz-catalog-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px;}
+.gz-catalog-head-title{display:flex;align-items:baseline;gap:14px;}
 .gz-catalog-head h1{font-family:var(--font-disp);font-size:24px;margin:0;text-transform:uppercase;}
 .gz-catalog-loading{font-size:12.5px;color:var(--muted);}
 .gz-catalog-empty{color:var(--muted);padding:50px 0;text-align:center;}

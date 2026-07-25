@@ -11,10 +11,6 @@
 
   <div class="gz-wrap gz-catalog-inner">
 
-    <button type="button" class="gz-filters-toggle" @click="drawerOpen = true">
-      <i class="ti ti-filter"></i> Filtros
-    </button>
-
     <div class="gz-filters-backdrop" x-show="drawerOpen" x-cloak @click="drawerOpen = false"></div>
 
     <aside class="gz-filters" :class="{ 'is-open': drawerOpen }">
@@ -100,8 +96,13 @@
 
     <div class="gz-catalog-results">
       <div class="gz-catalog-head">
-        <h1>Productos</h1>
-        <span class="gz-catalog-loading" x-show="loading">Buscando…</span>
+        <div class="gz-catalog-head-title">
+          <h1>Productos</h1>
+          <span class="gz-catalog-loading" x-show="loading">Buscando…</span>
+        </div>
+        <button type="button" class="gz-filters-toggle" @click="drawerOpen = true">
+          <i class="ti ti-filter"></i> Filtros
+        </button>
       </div>
 
       {{-- Grilla SSR: visible por defecto, ya filtrada segun los query params de la URL --}}
