@@ -4,7 +4,7 @@
 
 <!-- HERO -->
 <section class="gz-hero" id="top">
-  <img src="{{ asset('images/sections/hero-bg.jpg') }}" alt="Mural GAZÚ Padel Club">
+  <img src="{{ asset('images/sections/gz-hero.jpg') }}" alt="Mural GAZÚ Padel Club">
   <div class="gz-hero-shade"></div>
   <div class="gz-wrap gz-hero-inner">
     <p class="gz-hero-kicker">Nueva colección 2026 · Dr. Zavalla 1761, Santa Fe</p>
@@ -60,6 +60,8 @@
 <section class="gz-adbanner">
   <div class="gz-wrap">
     <div class="gz-adbanner-inner">
+      <img src="{{ asset('images/sections/visit-bg.jpg') }}" alt="">
+      <div class="gz-adbanner-shade"></div>
       <div class="gz-ad-l">
         <p class="gz-ad-kicker">Espacio publicitario</p>
         <p class="gz-ad-title"><i class="ti ti-star-filled"></i>TU MARCA ACÁ</p>
@@ -114,7 +116,7 @@
 <section class="gz-visit" id="complejo">
   <div class="gz-wrap gz-visit-grid">
     <div class="gz-visit-media">
-      <img src="{{ asset('images/sections/visit-bg.jpg') }}" alt="Canchas del complejo GAZÚ">
+      <img src="{{ asset('images/sections/fachada.jpg') }}" alt="Fachada del complejo GAZÚ">
       <span class="gz-visit-pin"><i class="ti ti-map-pin"></i>Dr. Zavalla 1761, Santa Fe</span>
     </div>
     <div class="gz-visit-copy">
