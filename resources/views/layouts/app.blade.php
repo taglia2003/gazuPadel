@@ -65,8 +65,6 @@
     <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Gorras']) }}">Gorras</a>
     <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Accesorios']) }}">Accesorios</a>
     <a class="gz-nav-link" href="{{ route('products.index', ['category' => 'Bolsos']) }}">Bolsos</a>
-    <a class="gz-nav-link" href="{{ route('products.index', ['gender' => 'Hombre']) }}">Hombre</a>
-    <a class="gz-nav-link" href="{{ route('products.index', ['gender' => 'Mujer']) }}">Mujer</a>
   </div>
 </nav>
 
