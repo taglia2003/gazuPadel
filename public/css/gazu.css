@@ -144,8 +144,8 @@ button{font-family:inherit;cursor:pointer;}
 .gz-visit-media{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;}
 @media (min-width:860px){ .gz-visit-media{aspect-ratio:3/4;} }
 .gz-visit-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;}
-.gz-visit-media img:nth-of-type(1){animation:gz-slide-a 10s ease-in-out infinite;}
-.gz-visit-media img:nth-of-type(2){animation:gz-slide-b 10s ease-in-out infinite;}
+.gz-visit-media img:nth-of-type(1){animation:gz-slide-a 5s ease-in-out infinite;}
+.gz-visit-media img:nth-of-type(2){animation:gz-slide-b 5s ease-in-out infinite;}
 @keyframes gz-slide-a{0%,42%{opacity:1;}50%,92%{opacity:0;}100%{opacity:1;}}
 @keyframes gz-slide-b{0%,42%{opacity:0;}50%,92%{opacity:1;}100%{opacity:0;}}
 .gz-visit-pin{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(10,10,10,.72);backdrop-filter:blur(4px);color:#fff;font-size:11px;font-weight:600;letter-spacing:.03em;padding:7px 11px;border-radius:5px;text-transform:uppercase;}

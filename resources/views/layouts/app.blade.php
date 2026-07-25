@@ -11,8 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
-<link rel="stylesheet" href="{{ asset('css/gazu.css') }}">
-<link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+<link rel="stylesheet" href="{{ asset('css/gazu.css') }}?v={{ filemtime(public_path('css/gazu.css')) }}">
+<link rel="stylesheet" href="{{ asset('css/cart.css') }}?v={{ filemtime(public_path('css/cart.css')) }}">
 @stack('styles')
 </head>
 <body x-data>
@@ -205,8 +205,8 @@
 <div class="gz-toast" x-show="$store.cart.toastMessage" x-cloak x-text="$store.cart.toastMessage" x-transition></div>
 
 <script>window.__cartCount = @json($cartCount ?? 0);</script>
-<script src="{{ asset('js/cart.js') }}"></script>
-<script src="{{ asset('js/catalog.js') }}"></script>
+<script src="{{ asset('js/cart.js') }}?v={{ filemtime(public_path('js/cart.js')) }}"></script>
+<script src="{{ asset('js/catalog.js') }}?v={{ filemtime(public_path('js/catalog.js')) }}"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>

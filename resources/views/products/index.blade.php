@@ -3,7 +3,7 @@
 @section('title', 'Productos · GAZÚ Padel Club')
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/catalog.css') }}">
+<link rel="stylesheet" href="{{ asset('css/catalog.css') }}?v={{ filemtime(public_path('css/catalog.css')) }}">
 @endpush
 
 @section('content')
